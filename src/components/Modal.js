@@ -5,7 +5,6 @@ const Modal = ({ isOpen, closeModal, event }) => {
 
   useEffect(() => {
     if (event) {
-      // Check if the "isJoined" state is saved in local storage for this event when the component mounts
       const storedIsJoined = localStorage.getItem(`event_${event.id}_isJoined`);
       if (storedIsJoined !== null) {
         setIsJoined(JSON.parse(storedIsJoined));
@@ -15,13 +14,11 @@ const Modal = ({ isOpen, closeModal, event }) => {
 
   useEffect(() => {
     if (event) {
-      // Save the "isJoined" state to local storage for this event whenever it changes
       localStorage.setItem(`event_${event.id}_isJoined`, JSON.stringify(isJoined));
     }
   }, [event, isJoined]);
 
   if (!isOpen || !event) {
-    // Handle the case where the modal is not open or the event is not provided
     return null;
   }
 

@@ -9,13 +9,12 @@ const Crud = () => {
   const [mapCoords, setMapCoords] = useState({ lat: 42.645312, lng: 21.1733611 });
 
   useEffect(() => {
-    // Load data from local storage on component mount
     const savedItems = JSON.parse(localStorage.getItem('crudItems')) || [];
     setItems(savedItems);
   }, []);
 
   const handleSave = () => {
-    // Create a new item object
+    // Krijon objekt te ri
     console.log(imageFile);
     const newItem = {
       title,
@@ -24,13 +23,13 @@ const Crud = () => {
       mapCoords: { ...mapCoords },
     };
 
-    // Update the state with the new item
+    // Qitu e bojm update state-in me state te ri
     setItems([...items, newItem]);
 
-    // Save the updated data to local storage
+    // Bohen save ne local storage
     localStorage.setItem('crudItems', JSON.stringify([...items, newItem]));
 
-    // Clear the input fields
+    // Clear input fields
     setTitle('');
     setDescription('');
     setImageFile(null);
@@ -38,11 +37,9 @@ const Crud = () => {
   };
 
   const handleDelete = (index) => {
-    // Create a copy of the items array and remove the item at the specified index
     const updatedItems = [...items];
     updatedItems.splice(index, 1);
 
-    // Update the state and local storage with the updated items
     setItems(updatedItems);
     localStorage.setItem('crudItems', JSON.stringify(updatedItems));
   };
@@ -84,8 +81,8 @@ const Crud = () => {
             type="file"
             id="image"
             className="w-full border rounded-md p-2"
-            accept="image/*" // Allow only image files to be uploaded
-            onChange={(e) => setImageFile(e.target.files[0])} // Store the selected file
+            accept="image/*" 
+            onChange={(e) => setImageFile(e.target.files[0])} 
           />
         </div>
 
@@ -150,7 +147,6 @@ const Crud = () => {
 };
 
 const UseMapEventsComponent = ({ setMapCoords }) => {
-  // Use useMapEvents here to capture map events
   const map = useMapEvents({
     click: (e) => {
       setMapCoords(e.latlng);

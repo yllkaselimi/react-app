@@ -6,7 +6,6 @@ const CardsSection = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        // Load data from local storage on component mount
         const savedItems = JSON.parse(localStorage.getItem('crudItems')) || [];
         setItems(savedItems);
     }, []);

@@ -61,7 +61,6 @@ const Evente = () => {
         date: 'Sat Sep 23',
         description: 'Le të bashkohemi së bashku për të pastroruar dhe ruajtur mjedisin në Kosovë. Kjo është detyra jonë ndaj vetes, shëndetit, natyrës, dhe të ardhmes së vendit tonë. Te ndihmojmë në mbrojtjen dhe ruajtjen e natyrës tone. Ndërveprimi ynë me mjedisin ndikon në nivel global. Duke u bashkuar me përpjekjet e komunitetit ndërkombëtar për të pastrojmë planetin tonë, ne kontribuojmë në mbrojtjen e klimës globale.',
       },
-    // Add more events as needed
   ];
 
   const openModal = (event) => {

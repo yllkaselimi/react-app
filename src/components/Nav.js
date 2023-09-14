@@ -27,14 +27,6 @@ const Navigation = ({user, setUser}) => {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/raporto"
-                className="text-gray-200 hover:text-white transition duration-300"
-              >
-                Raporto
-              </NavLink>
-            </li>
-            <li>
             <NavLink
                 to="/evente"
                 className="text-gray-200 hover:text-white transition duration-300"
@@ -45,30 +37,30 @@ const Navigation = ({user, setUser}) => {
             <li className="relative group">
               <a
                 href="#"
-                className="block py-2 px-4 text-white dropdown-toggle"
+                className="block text-white dropdown-toggle"
                 role="button"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {( user !== null) ? user : 'Guest'}
+                {( user !== null) ? user : 'Guest ▼'}
               </a>
-              <ul className="hidden absolute left-0 space-y-2 bg-white text-gray-700 group-hover:block">
+              <ul className="hidden absolute left-0 space-y-2 text-gray-700 group-hover:block">
                 {(user === null) ? (
                   <>
                     <li>
-                      <a href="/login" className="block px-4 py-2 hover:bg-gray-100">Login</a>
+                      <a href="/login" className="block text-white mt-2">Login</a>
                     </li>
                     <li>
-                      <a href="/register" className="block px-4 py-2 hover:bg-gray-100">Register</a>
+                      <a href="/register" className="block text-white">Register</a>
                     </li>
                   </>
                 ) : (
                   <>
                     <li>
-                      <a href="/raporto" className="block px-4 py-2 hover:bg-gray-100">Raporto</a>
+                      <a href="/raporto" className="block text-white mt-2">Raporto</a>
                     </li>
                     <li>
-                      <button onClick={handleLogout} className="block px-4 py-2 hover:bg-gray-100">Logout</button>
+                      <button onClick={handleLogout} className="block text-white">Logout</button>
                     </li>
                   </>
                 )}

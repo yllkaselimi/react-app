@@ -8,7 +8,6 @@ const MapSection = () => {
   const [mapCoords, setMapCoords] = useState({ lat:  42.645312, lng: 21.1733611 });
 
   useEffect(() => {
-    // Load data from local storage on component mount
     const savedItems = JSON.parse(localStorage.getItem('crudItems')) || [];
     setItems(savedItems);
   }, []);
@@ -48,7 +47,6 @@ const MapSection = () => {
 };
 
 const UseMapEventsComponent = ({ setMapCoords }) => {
-  // Use useMapEvents here to capture map events
   const map = useMapEvents({
     click: (e) => {
       setMapCoords(e.latlng);
